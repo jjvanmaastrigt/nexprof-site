@@ -1,1259 +1,483 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NexProf — Transition Into the Next Skilled Economy</title>
-<meta name="description" content="NexProf helps professionals transition from white‑collar roles into meaningful skilled careers through fast‑track training pathways and industry partnerships.">
 
-<!-- Inter from Google Fonts — Circle 8 brand font -->
+<meta name="description" content="NexProf helps professionals transition from white-collar roles into meaningful skilled careers through fast-track training pathways and industry partnerships.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-/* ═══════════════════════════════════════════════════════════════
-   DESIGN TOKENS — Circle 8 Brand Guide 2022
-   ═══════════════════════════════════════════════════════════════ */
+
 :root {
-  /* Neutrals */
-  --smoke:      #F1F3F7;
-  --ash:        #D8D8DD;
-  --anthracite: #353A3D;
-  --c8-black:   #0E0F0F;
 
-  /* Green (primary accent — life, renewal) */
-  --spring:     #41E881;
-  --lime:       #9BFF7C;
+--smoke:#F1F3F7;
+--ash:#D8D8DD;
+--anthracite:#353A3D;
+--c8-black:#0E0F0F;
 
-  /* Blue (corporate confidence) */
-  --space-blue: #1B354F;
-  --arctic:     #51F2E6;
+--spring:#41E881;
+--lime:#9BFF7C;
 
-  /* Page base */
-  --bg:         #0b1220;   /* slightly deeper than space-blue for max contrast */
-  --surface:    #112033;
-  --surface2:   #162840;
-  --border:     rgba(255,255,255,0.08);
-  --muted:      #8899aa;
-  --body-text:  #c8d4e0;
+--space-blue:#1B354F;
+--arctic:#51F2E6;
 
-  /* Typography */
-  --ff: 'Inter', system-ui, sans-serif;
+--bg:#0b1220;
+--surface:#112033;
+--surface2:#162840;
+--border:rgba(255,255,255,0.08);
+--muted:#8899aa;
+--body-text:#c8d4e0;
 
-  /* Layout */
-  --max: 1060px;
-  --r:   12px;
+--ff:'Inter',system-ui,sans-serif;
+
+--max:1060px;
+--r:12px;
+
 }
 
-/* ═══ RESET & BASE ════════════════════════════════════════════ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--ff);
-  font-size: 16px;
-  background: var(--bg);
-  color: var(--body-text);
-  line-height: 1.7;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+*,
+*::before,
+*::after{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
-/* ═══ UTILITIES ═══════════════════════════════════════════════ */
-.wrap { max-width: var(--max); margin: auto; padding: 0 28px; }
-.spring { color: var(--spring); }
-.arctic { color: var(--arctic); }
-.label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--spring);
-  margin-bottom: 16px;
+html{
+scroll-behavior:smooth;
 }
 
-/* ═══ CONCENTRIC RING MOTIF (brand-derived SVG decorator) ══════ */
-.rings-deco {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.12;
+body{
+font-family:var(--ff);
+background:var(--bg);
+color:var(--body-text);
+line-height:1.7;
+overflow-x:hidden;
 }
 
-/* ═══ NAV ═════════════════════════════════════════════════════ */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(11,18,32,0.82);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border);
-}
-.nav-inner {
-  max-width: var(--max); margin: auto; padding: 0 28px;
-  height: 62px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo {
-  font-weight: 800;
-  font-size: 19px;
-  letter-spacing: -0.3px;
-  color: #fff;
-}
-.nav-logo em {
-  font-style: normal;
-  color: var(--spring);
-}
-.nav-pill {
-  background: var(--spring);
-  color: var(--c8-black);
-  font-weight: 700;
-  font-size: 13.5px;
-  padding: 9px 20px;
-  border-radius: 100px;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
-  letter-spacing: -0.1px;
-}
-.nav-pill:hover { background: var(--lime); transform: translateY(-1px); }
-
-/* ═══ HERO ════════════════════════════════════════════════════ */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 120px 28px 80px;
-  overflow: hidden;
+.wrap{
+max-width:var(--max);
+margin:auto;
+padding:0 28px;
 }
 
-/* Subtle dot-grid texture */
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(65,232,129,0.18) 1px, transparent 1px);
-  background-size: 38px 38px;
-  animation: gridScroll 28s linear infinite;
-}
-@keyframes gridScroll {
-  from { background-position: 0 0; }
-  to   { background-position: 38px 38px; }
+.spring{color:var(--spring);}
+.arctic{color:var(--arctic);}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:200;
+background:rgba(11,18,32,0.85);
+backdrop-filter:blur(14px);
+border-bottom:1px solid var(--border);
 }
 
-/* Large radial glow — space blue to spring green */
-.hero::after {
-  content: '';
-  position: absolute;
-  top: -30%; left: 55%; transform: translateX(-50%);
-  width: 800px; height: 700px;
-  background: radial-gradient(ellipse,
-    rgba(65,232,129,0.09) 0%,
-    rgba(81,242,230,0.05) 40%,
-    transparent 70%);
-  pointer-events: none;
+.nav-inner{
+max-width:var(--max);
+margin:auto;
+padding:0 28px;
+height:62px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
-/* Concentric ring decorators */
-.hero-rings {
-  position: absolute;
-  right: -80px; top: 50%; transform: translateY(-50%);
-  width: 600px; height: 600px;
-  pointer-events: none;
+.nav-logo{
+font-weight:800;
+font-size:19px;
+color:white;
 }
 
-.hero-inner {
-  position: relative; z-index: 2;
-  max-width: var(--max); margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
-  align-items: center;
+.nav-logo em{
+font-style:normal;
+color:var(--spring);
 }
 
-/* Status pill */
-.hero-status {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(65,232,129,0.1);
-  border: 1px solid rgba(65,232,129,0.28);
-  border-radius: 100px;
-  padding: 5px 14px 5px 10px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--spring);
-  margin-bottom: 28px;
-  letter-spacing: 0.02em;
-}
-.status-dot {
-  width: 7px; height: 7px;
-  background: var(--spring);
-  border-radius: 50%;
-  animation: blink 2s ease-in-out infinite;
-}
-@keyframes blink {
-  0%,100% { opacity:1; }
-  50%      { opacity:0.35; }
+.nav-pill{
+background:var(--spring);
+color:var(--c8-black);
+font-weight:700;
+font-size:14px;
+padding:9px 20px;
+border-radius:100px;
+text-decoration:none;
 }
 
-/* Hero headline — Inter 800, normal stretch, generous letter-spacing */
-.hero h1 {
-  font-size: clamp(34px, 4.8vw, 56px);
-  font-weight: 800;
-  letter-spacing: -1.2px;
-  line-height: 1.12;
-  color: #fff;
-  margin-bottom: 22px;
-}
-.hero h1 .hl {
-  color: var(--spring);
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+padding:120px 28px 80px;
 }
 
-.hero-sub {
-  font-size: 17px;
-  font-weight: 300;
-  color: var(--muted);
-  max-width: 460px;
-  margin-bottom: 36px;
-  line-height: 1.75;
+.hero-inner{
+max-width:var(--max);
+margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:72px;
+align-items:center;
 }
 
-.hero-actions {
-  display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
-}
-.btn-primary {
-  background: var(--spring);
-  color: var(--c8-black);
-  font-weight: 700;
-  font-size: 15px;
-  padding: 14px 26px;
-  border-radius: 100px;
-  text-decoration: none;
-  border: none; cursor: pointer;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  letter-spacing: -0.1px;
-}
-.btn-primary:hover {
-  background: var(--lime);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(65,232,129,0.28);
-}
-.btn-outline {
-  background: transparent;
-  color: var(--body-text);
-  font-size: 15px;
-  font-weight: 400;
-  padding: 14px 26px;
-  border-radius: 100px;
-  border: 1px solid rgba(255,255,255,0.2);
-  text-decoration: none;
-  transition: border-color 0.2s, background 0.2s;
-}
-.btn-outline:hover {
-  border-color: rgba(255,255,255,0.45);
-  background: rgba(255,255,255,0.04);
+.hero h1{
+font-size:clamp(34px,4.8vw,56px);
+font-weight:800;
+letter-spacing:-1px;
+line-height:1.12;
+color:white;
+margin-bottom:22px;
 }
 
-.hero-trust {
-  margin-top: 36px;
-  display: flex; align-items: center; gap: 10px;
-  font-size: 13px;
-  color: var(--muted);
-}
-.avatars { display: flex; }
-.avatars span {
-  width: 28px; height: 28px;
-  border-radius: 50%;
-  border: 2px solid var(--bg);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px;
-  margin-left: -7px;
-}
-.avatars span:first-child { margin-left: 0; }
-.av1{background:#2d6a4f;} .av2{background:#1b7a99;}
-.av3{background:#6b3fa0;} .av4{background:#7a4a1b;}
-
-/* ── Hero visual card ── */
-.hero-card {
-  background: rgba(17,32,51,0.95);
-  border: 1px solid rgba(65,232,129,0.18);
-  border-radius: 18px;
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-}
-.hero-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--spring), transparent);
-}
-.card-label {
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-.card-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 22px;
-}
-.match-bars { display: flex; flex-direction: column; gap: 13px; }
-.bar-row { display: flex; flex-direction: column; gap: 5px; }
-.bar-meta {
-  display: flex; justify-content: space-between;
-  font-size: 12.5px; color: var(--body-text);
-}
-.bar-track {
-  height: 5px;
-  background: rgba(255,255,255,0.07);
-  border-radius: 3px; overflow: hidden;
-}
-.bar-fill {
-  height: 100%; border-radius: 3px;
-  animation: grow 1.4s ease forwards;
-  transform-origin: left;
-}
-@keyframes grow { from { width: 0; } }
-.bf1 { background: linear-gradient(90deg, var(--spring), var(--lime)); width: 88%; animation-delay:.10s; }
-.bf2 { background: linear-gradient(90deg, var(--arctic), #a5f3fc); width: 75%; animation-delay:.25s; }
-.bf3 { background: linear-gradient(90deg, #818cf8, #c4b5fd); width: 62%; animation-delay:.40s; }
-.bf4 { background: linear-gradient(90deg, #fb923c, #fde68a); width: 54%; animation-delay:.55s; }
-
-.card-footer {
-  margin-top: 22px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  display: flex; justify-content: space-between;
-}
-.cstat strong {
-  display: block;
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--spring);
-  letter-spacing: -0.5px;
-}
-.cstat span { font-size: 11.5px; color: var(--muted); }
-
-.float-tag {
-  position: absolute;
-  bottom: -14px; right: -14px;
-  background: var(--surface2);
-  border: 1px solid rgba(81,242,230,0.35);
-  border-radius: 10px;
-  padding: 10px 14px;
-  font-size: 12px;
-  color: var(--arctic);
-  display: flex; align-items: center; gap: 7px;
-  animation: floatY 3.5s ease-in-out infinite;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-@keyframes floatY {
-  0%,100% { transform: translateY(0); }
-  50%      { transform: translateY(-7px); }
+.hero h1 .hl{
+color:var(--spring);
 }
 
-/* ═══ SECTION BASE ════════════════════════════════════════════ */
-.sec { padding: 96px 28px; }
-.sec-dark { background: var(--surface); }
-
-.sec-head { margin-bottom: 56px; }
-.sec-head.center { text-align: center; }
-.sec-head.center .sec-body { margin-left: auto; margin-right: auto; }
-
-h2.sec-title {
-  font-size: clamp(26px, 3.5vw, 40px);
-  font-weight: 800;
-  letter-spacing: -0.9px;
-  line-height: 1.15;
-  color: #fff;
-  margin-bottom: 16px;
-}
-.sec-body {
-  font-size: 16.5px;
-  font-weight: 300;
-  color: var(--muted);
-  max-width: 560px;
-  line-height: 1.75;
+.hero-sub{
+font-size:17px;
+color:var(--muted);
+margin-bottom:36px;
+max-width:460px;
 }
 
-/* ═══ STATS GRID ══════════════════════════════════════════════ */
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-.stat-tile {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 24px 22px;
-  transition: border-color 0.2s;
-}
-.stat-tile:hover { border-color: rgba(65,232,129,0.3); }
-.stat-num {
-  font-size: 36px;
-  font-weight: 900;
-  letter-spacing: -1.5px;
-  line-height: 1;
-  margin-bottom: 7px;
-}
-.sn-green  { color: var(--spring); }
-.sn-arctic { color: var(--arctic); }
-.sn-lime   { color: var(--lime); }
-.sn-white  { color: #fff; }
-.stat-desc {
-  font-size: 12.5px;
-  color: var(--muted);
-  line-height: 1.5;
+.btn-primary{
+background:var(--spring);
+color:var(--c8-black);
+font-weight:700;
+padding:14px 26px;
+border-radius:100px;
+text-decoration:none;
+border:none;
+cursor:pointer;
 }
 
-/* ═══ SPLIT LAYOUT ════════════════════════════════════════════ */
-.split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
+.btn-outline{
+border:1px solid rgba(255,255,255,0.2);
+padding:14px 26px;
+border-radius:100px;
+color:var(--body-text);
+text-decoration:none;
 }
 
-/* Shortage list */
-.shortage-list {
-  list-style: none;
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.shortage-list li {
-  display: flex; align-items: center; gap: 12px;
-  font-size: 14.5px;
-  color: var(--body-text);
-}
-.shortage-list li::before {
-  content: '';
-  flex-shrink: 0;
-  width: 7px; height: 7px;
-  background: var(--spring);
-  border-radius: 50%;
+.sec{
+padding:96px 28px;
 }
 
-/* ═══ STEP CARDS ══════════════════════════════════════════════ */
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-}
-.step-card {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 36px 28px;
-  position: relative;
-  transition: transform 0.2s, border-color 0.2s;
-}
-.step-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(65,232,129,0.25);
-}
-/* top accent bar on hover */
-.step-card::before {
-  content: '';
-  position: absolute; top: 0; left: 24px; right: 24px; height: 2px;
-  background: linear-gradient(90deg, var(--spring), var(--arctic));
-  border-radius: 0 0 3px 3px;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-.step-card:hover::before { opacity: 1; }
-
-.step-icon {
-  width: 46px; height: 46px;
-  border-radius: 11px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 20px;
-}
-.si-green  { background: rgba(65,232,129,0.12); }
-.si-arctic { background: rgba(81,242,230,0.12); }
-.si-lime   { background: rgba(155,255,124,0.12); }
-
-.step-num {
-  position: absolute;
-  top: 28px; right: 28px;
-  font-size: 48px;
-  font-weight: 900;
-  color: rgba(255,255,255,0.04);
-  line-height: 1;
-  letter-spacing: -2px;
-}
-.step-card h3 {
-  font-size: 17px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 10px;
-  letter-spacing: -0.2px;
-}
-.step-card p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.7;
+.sec-dark{
+background:var(--surface);
 }
 
-/* ═══ PERSONAS ════════════════════════════════════════════════ */
-.personas-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  margin-top: 0;
-}
-.persona-card {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 26px 22px;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.persona-card:hover {
-  border-color: rgba(81,242,230,0.3);
-  transform: translateY(-3px);
-}
-.persona-icon { font-size: 28px; margin-bottom: 12px; }
-.persona-card h3 {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 8px;
-  letter-spacing: -0.1px;
-}
-.persona-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-/* ═══ CAREER NODE CLOUD ═══════════════════════════════════════ */
-.node-cloud {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 32px;
-  margin-top: 40px;
-  position: relative;
-  overflow: hidden;
-}
-.node-cloud::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(65,232,129,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(65,232,129,0.03) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
-.cloud-label {
-  font-size: 10.5px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-weight: 600;
-  margin-bottom: 18px;
-  position: relative;
-}
-.nodes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-  position: relative;
-}
-.node {
-  padding: 7px 13px;
-  border-radius: 100px;
-  font-size: 12.5px;
-  font-weight: 500;
-  border: 1px solid;
-  transition: transform 0.15s;
-}
-.node:hover { transform: translateY(-2px); }
-.ng { background: rgba(65,232,129,0.08);  border-color: rgba(65,232,129,0.35);  color: var(--spring); }
-.na { background: rgba(81,242,230,0.08);  border-color: rgba(81,242,230,0.35);  color: var(--arctic); }
-.nl { background: rgba(155,255,124,0.08); border-color: rgba(155,255,124,0.35); color: var(--lime); }
-.nw { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.15); color: var(--ash); }
-
-/* ═══ WHY NEXPROF ═════════════════════════════════════════════ */
-.why-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-top: 0;
-}
-.why-item {
-  display: flex; gap: 14px; align-items: flex-start;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: var(--r);
-  padding: 20px 18px;
-}
-.why-dot {
-  flex-shrink: 0;
-  margin-top: 4px;
-  width: 8px; height: 8px;
-  background: var(--spring);
-  border-radius: 50%;
-}
-.why-item p {
-  font-size: 14px;
-  color: var(--body-text);
-  line-height: 1.6;
+.sec-title{
+font-size:clamp(26px,3.5vw,40px);
+font-weight:800;
+color:white;
+margin-bottom:16px;
 }
 
-/* ═══ SIGNUP ══════════════════════════════════════════════════ */
-.signup-wrap {
-  position: relative;
-  padding: 96px 28px;
-  overflow: hidden;
+.sec-body{
+color:var(--muted);
+max-width:560px;
 }
-.signup-wrap::before {
-  content: '';
-  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
-  width: 700px; height: 420px;
-  background: radial-gradient(ellipse, rgba(65,232,129,0.09), transparent 70%);
-  pointer-events: none;
+
+.signup-wrap{
+padding:96px 28px;
+background:var(--surface);
 }
-.signup-box {
-  max-width: 620px;
-  margin: auto;
-  text-align: center;
+
+.signup-box{
+max-width:620px;
+margin:auto;
+text-align:center;
 }
-.form-card {
-  background: var(--surface);
-  border: 1px solid rgba(65,232,129,0.15);
-  border-radius: 18px;
-  padding: 36px;
-  margin-top: 36px;
-  text-align: left;
+
+.form-card{
+background:var(--surface2);
+border:1px solid rgba(65,232,129,0.15);
+border-radius:18px;
+padding:36px;
+margin-top:36px;
+text-align:left;
 }
-.form-card::before {
-  display: none; /* clean for form */
+
+.fg{
+margin-bottom:16px;
 }
-.fg { margin-bottom: 16px; }
-.fg label {
-  display: block;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--muted);
-  margin-bottom: 6px;
-  letter-spacing: 0.02em;
+
+.fg label{
+display:block;
+font-size:12px;
+color:var(--muted);
+margin-bottom:6px;
 }
+
 .fg input,
-.fg select {
-  width: 100%;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 9px;
-  padding: 12px 14px;
-  font-family: var(--ff);
-  font-size: 15px;
-  color: #fff;
-  outline: none;
-  transition: border-color 0.2s;
-  appearance: none;
-}
-.fg input:focus,
-.fg select:focus { border-color: var(--spring); }
-.fg select option { background: var(--surface2); color: #fff; }
-.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-.submit-btn {
-  width: 100%;
-  margin-top: 6px;
-  background: var(--spring);
-  color: var(--c8-black);
-  font-family: var(--ff);
-  font-size: 16px;
-  font-weight: 700;
-  padding: 15px;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  letter-spacing: -0.1px;
-}
-.submit-btn:hover {
-  background: var(--lime);
-  transform: translateY(-1px);
-  box-shadow: 0 7px 24px rgba(65,232,129,0.3);
-}
-.form-note {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 12px;
-  color: var(--muted);
+.fg select{
+width:100%;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:9px;
+padding:12px 14px;
+font-family:var(--ff);
+font-size:15px;
+color:white;
 }
 
-/*
-  ── TALLY EMBED (activate when form ID is available) ──
-  Replace the placeholder-form div below with:
-
-  <iframe
-    data-tally-src="https://tally.so/embed/YOURFORMID"
-    loading="lazy" width="100%" height="460"
-    frameborder="0" title="NexProf Signup">
-  </iframe>
-  <script>
-    var d=document,w="https://tally.so/widgets/embed.js",
-    v=function(){"undefined"!=typeof Tally
-      ?Tally.loadEmbeds()
-      :d.querySelectorAll("iframe[data-tally-src]:not([src])")
-        .forEach(e=>e.src=e.dataset.tallySrc)};
-    if("undefined"!=typeof Tally)v();
-    else if(!d.querySelector('script[src="'+w+'"]')){
-      var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;
-      d.body.appendChild(s);
-    }
-  </script>
-
-──────────────────────────────────────────────────────
-*/
-
-/* ═══ FOOTER ══════════════════════════════════════════════════ */
-footer {
-border-top: 1px solid var(–border);
-padding: 48px 28px;
-}
-.footer-inner {
-max-width: var(–max); margin: auto;
-display: flex;
-justify-content: space-between;
-align-items: flex-start;
-flex-wrap: wrap;
-gap: 24px;
-}
-.footer-brand { max-width: 280px; }
-.footer-logo {
-font-size: 18px;
-font-weight: 800;
-color: #fff;
-letter-spacing: -0.3px;
-}
-.footer-logo em { font-style: normal; color: var(–spring); }
-.footer-tagline {
-font-size: 13px;
-color: var(–muted);
-margin-top: 5px;
-line-height: 1.5;
-}
-.footer-links {
-display: flex;
-gap: 22px;
-align-items: center;
-}
-.footer-links a {
-font-size: 13.5px;
-color: var(–muted);
-text-decoration: none;
-transition: color 0.2s;
-}
-.footer-links a:hover { color: var(–spring); }
-.footer-copy {
-max-width: var(–max); margin: 28px auto 0;
-padding: 0 28px;
-font-size: 12px;
-color: rgba(255,255,255,0.2);
+.fg-row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
 }
 
-/* ═══ SCROLL REVEAL ═══════════════════════════════════════════ */
-.reveal {
-opacity: 0;
-transform: translateY(24px);
-transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.on {
-opacity: 1;
-transform: translateY(0);
+.submit-btn{
+width:100%;
+background:var(--spring);
+color:var(--c8-black);
+font-weight:700;
+padding:15px;
+border:none;
+border-radius:100px;
+cursor:pointer;
+margin-top:6px;
 }
 
-/* ═══ RESPONSIVE ══════════════════════════════════════════════ */
-@media (max-width: 860px) {
-.hero-inner  { grid-template-columns: 1fr; gap: 48px; }
-.hero-card   { display: none; } /* simplify on mobile */
-.split       { grid-template-columns: 1fr; gap: 40px; }
-.steps-grid  { grid-template-columns: 1fr; }
-.personas-grid { grid-template-columns: 1fr 1fr; }
-.stats-grid  { grid-template-columns: 1fr 1fr; }
-.why-list    { grid-template-columns: 1fr; }
-.footer-inner { flex-direction: column; }
-.fg-row      { grid-template-columns: 1fr; }
+.form-note{
+margin-top:14px;
+text-align:center;
+font-size:12px;
+color:var(--muted);
 }
-@media (max-width: 520px) {
-.personas-grid { grid-template-columns: 1fr; }
-.hero h1 { font-size: 30px; }
+
+.form-note a{
+color:var(--spring);
+text-decoration:none;
 }
+
+footer{
+border-top:1px solid var(--border);
+padding:48px 28px;
+}
+
+.footer-inner{
+max-width:var(--max);
+margin:auto;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:24px;
+}
+
+.footer-logo{
+font-size:18px;
+font-weight:800;
+color:white;
+}
+
+.footer-logo em{
+font-style:normal;
+color:var(--spring);
+}
+
+.footer-links{
+display:flex;
+gap:22px;
+}
+
+.footer-links a{
+font-size:13px;
+color:var(--muted);
+text-decoration:none;
+}
+
+.footer-links a:hover{
+color:var(--spring);
+}
+
+.footer-copy{
+max-width:var(--max);
+margin:28px auto 0;
+padding:0 28px;
+font-size:12px;
+color:rgba(255,255,255,0.2);
+}
+
+@media (max-width:860px){
+
+.hero-inner{
+grid-template-columns:1fr;
+}
+
+.fg-row{
+grid-template-columns:1fr;
+}
+
+}
+
 </style>
-
 </head>
+
 <body>
 
-<!-- ═══ NAV ═══════════════════════════════════════════════════ -->
-
 <nav>
-  <div class="nav-inner">
-    <div class="nav-logo">Nex<em>Prof</em></div>
-    <a href="#signup" class="nav-pill">Get Early Access</a>
-  </div>
+<div class="nav-inner">
+<div class="nav-logo">Nex<em>Prof</em></div>
+<a href="#signup" class="nav-pill">Get Early Access</a>
+</div>
 </nav>
-
-<!-- ═══ HERO ═══════════════════════════════════════════════════ -->
 
 <header class="hero">
 
-  <!-- Concentric ring SVG motif (brand-derived) -->
+<div class="hero-inner">
 
-  <svg class="hero-rings" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="300" cy="300" r="80"  stroke="#41E881" stroke-width="1" opacity="0.18"/>
-    <circle cx="300" cy="300" r="140" stroke="#41E881" stroke-width="1" opacity="0.13"/>
-    <circle cx="300" cy="300" r="200" stroke="#41E881" stroke-width="1" opacity="0.09"/>
-    <circle cx="300" cy="300" r="260" stroke="#51F2E6" stroke-width="1" opacity="0.07"/>
-    <circle cx="300" cy="300" r="320" stroke="#51F2E6" stroke-width="1" opacity="0.05"/>
-    <circle cx="300" cy="300" r="380" stroke="#51F2E6" stroke-width="1" opacity="0.03"/>
-  </svg>
-
-  <div class="hero-inner">
-
-```
-<!-- Left: copy -->
 <div>
-  <div class="hero-status">
-    <span class="status-dot"></span>
-    Research phase — early access now open
-  </div>
 
-  <h1>
-    Your expertise<br>is your<br>
-    <span class="hl">next career.</span>
-  </h1>
+<h1>
+Your expertise<br>
+is your<br>
+<span class="hl">next career.</span>
+</h1>
 
-  <p class="hero-sub">
-    AI is reshaping knowledge work. Europe urgently needs skilled technical professionals. NexProf maps the fastest path from where you are to where real opportunity is.
-  </p>
+<p class="hero-sub">
+AI is reshaping knowledge work. Europe urgently needs skilled technical professionals.
+NexProf maps the fastest path from where you are to where real opportunity is.
+</p>
 
-  <div class="hero-actions">
-    <a href="#signup" class="btn-primary">Join Early Access</a>
-    <a href="#approach" class="btn-outline">See how it works</a>
-  </div>
+<a href="#signup" class="btn-primary">Join Early Access</a>
 
-  <div class="hero-trust">
-    <div class="avatars">
-      <span class="av1">👤</span>
-      <span class="av2">👤</span>
-      <span class="av3">👤</span>
-      <span class="av4">👤</span>
-    </div>
-    <span>130+ professionals already on the list</span>
-  </div>
 </div>
 
-<!-- Right: match card -->
-<div style="position:relative;">
-  <div class="hero-card">
-    <div class="card-label">Career Match Analysis</div>
-    <div class="card-title">Your Profile → Top Pathways</div>
-    <div class="match-bars">
-      <div class="bar-row">
-        <div class="bar-meta">
-          <span>Electrical Infrastructure Tech</span>
-          <span style="color:var(--spring)">88%</span>
-        </div>
-        <div class="bar-track"><div class="bar-fill bf1"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-meta">
-          <span>Energy Retrofit Specialist</span>
-          <span style="color:var(--arctic)">75%</span>
-        </div>
-        <div class="bar-track"><div class="bar-fill bf2"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-meta">
-          <span>Renewable Energy Installer</span>
-          <span style="color:#c4b5fd">62%</span>
-        </div>
-        <div class="bar-track"><div class="bar-fill bf3"></div></div>
-      </div>
-      <div class="bar-row">
-        <div class="bar-meta">
-          <span>Industrial Electrification Eng.</span>
-          <span style="color:#fde68a">54%</span>
-        </div>
-        <div class="bar-track"><div class="bar-fill bf4"></div></div>
-      </div>
-    </div>
-    <div class="card-footer">
-      <div class="cstat">
-        <strong>2.8M</strong>
-        <span>EU vacancies forecast</span>
-      </div>
-      <div class="cstat">
-        <strong>€45k+</strong>
-        <span>avg. starting salary</span>
-      </div>
-    </div>
-  </div>
-  <div class="float-tag">
-    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-    </svg>
-    Matching in progress…
-  </div>
-</div>
-```
+<div>
 
-  </div>
+<img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200"
+style="width:100%;border-radius:18px;opacity:.85"
+alt="Solar energy infrastructure">
+
+</div>
+
+</div>
+
 </header>
 
-<!-- ═══ THE SHIFT ══════════════════════════════════════════════ -->
-
 <section class="sec sec-dark">
-  <div class="wrap">
-    <div class="split">
 
-```
-  <div class="reveal">
-    <span class="label">The Opportunity</span>
-    <h2 class="sec-title">The labour market is being restructured — fast.</h2>
-    <p class="sec-body">
-      AI is automating large portions of knowledge work. At the same time, Europe faces a structural deficit of skilled technicians needed to deliver the energy transition and major infrastructure investment.
-    </p>
-    <ul class="shortage-list">
-      <li>Electrical infrastructure technicians</li>
-      <li>Energy retrofit specialists</li>
-      <li>Renewable energy installers</li>
-      <li>Industrial electrification engineers</li>
-      <li>Heat pump and HVAC technicians</li>
-      <li>Smart grid and battery storage specialists</li>
-    </ul>
-  </div>
+<div class="wrap">
 
-  <div class="stats-grid reveal">
-    <div class="stat-tile">
-      <div class="stat-num sn-green">40%</div>
-      <div class="stat-desc">of current office tasks automatable by 2030 <em>(McKinsey)</em></div>
-    </div>
-    <div class="stat-tile">
-      <div class="stat-num sn-arctic">2.8M</div>
-      <div class="stat-desc">skilled technician vacancies forecast in the EU by 2026</div>
-    </div>
-    <div class="stat-tile">
-      <div class="stat-num sn-lime">€1.8T</div>
-      <div class="stat-desc">EU infrastructure investment driving demand through 2030</div>
-    </div>
-    <div class="stat-tile">
-      <div class="stat-num sn-white">68%</div>
-      <div class="stat-desc">of employers report critical technical skills shortages today</div>
-    </div>
-  </div>
+<h2 class="sec-title">The labour market is being restructured — fast.</h2>
+
+<p class="sec-body">
+AI is automating large portions of knowledge work while Europe faces
+major shortages of skilled professionals required to deliver the energy transition.
+</p>
 
 </div>
-```
 
-  </div>
 </section>
 
-<!-- ═══ THE APPROACH ═══════════════════════════════════════════ -->
+<div class="signup-wrap" id="signup">
 
-<section class="sec" id="approach">
-  <div class="wrap">
+<div class="signup-box">
 
-```
-<div class="sec-head center reveal">
-  <span class="label">The Process</span>
-  <h2 class="sec-title">From where you are<br>to where you need to be.</h2>
-  <p class="sec-body">
-    NexProf builds a structured pathway — from skills mapping to employer connection — so you never navigate this transition alone.
-  </p>
-</div>
+<h2 class="sec-title">Join the research group</h2>
 
-<div class="steps-grid">
-
-  <div class="step-card reveal">
-    <div class="step-num">01</div>
-    <div class="step-icon si-green">
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#41E881" stroke-width="2">
-        <circle cx="11" cy="11" r="8"/><path stroke-linecap="round" d="M21 21l-4.35-4.35"/>
-      </svg>
-    </div>
-    <h3>Talent Mapping</h3>
-    <p>We identify which skilled professions best match your cognitive strengths, technical aptitude, and career ambitions.</p>
-  </div>
-
-  <div class="step-card reveal">
-    <div class="step-num">02</div>
-    <div class="step-icon si-arctic">
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#51F2E6" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-      </svg>
-    </div>
-    <h3>Fast-Track Training</h3>
-    <p>Curated, practical training pathways — from short certifications to apprenticeship bridges — designed for professionals transitioning later in their careers.</p>
-  </div>
-
-  <div class="step-card reveal">
-    <div class="step-num">03</div>
-    <div class="step-icon si-lime">
-      <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="#9BFF7C" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
-      </svg>
-    </div>
-    <h3>Industry Partnerships</h3>
-    <p>We connect motivated talent directly with companies experiencing labour shortages in energy systems, infrastructure, and advanced manufacturing.</p>
-  </div>
-
-</div>
-```
-
-  </div>
-</section>
-
-<!-- ═══ WHO IT'S FOR ════════════════════════════════════════════ -->
-
-<section class="sec sec-dark">
-  <div class="wrap">
-
-```
-<div class="sec-head center reveal">
-  <span class="label">Who NexProf Is For</span>
-  <h2 class="sec-title">Built for professionals<br>ready to make a move.</h2>
-</div>
-
-<div class="personas-grid">
-  <div class="persona-card reveal">
-    <div class="persona-icon">💼</div>
-    <h3>Office Professionals</h3>
-    <p>Administrative, financial, and analytical roles feeling the pressure of automation — ready to leverage existing skills in a new setting.</p>
-  </div>
-  <div class="persona-card reveal">
-    <div class="persona-icon">🎓</div>
-    <h3>Recent Graduates</h3>
-    <p>Entering a competitive market and looking to identify where genuine, long-term demand outpaces supply.</p>
-  </div>
-  <div class="persona-card reveal">
-    <div class="persona-icon">🔄</div>
-    <h3>Career Changers</h3>
-    <p>Professionals with 5–20 years of experience seeking meaningful, hands-on work with strong job security and clear progression.</p>
-  </div>
-  <div class="persona-card reveal">
-    <div class="persona-icon">⚡</div>
-    <h3>Technical Explorers</h3>
-    <p>Curious about energy, infrastructure, and electrification — wanting a structured way to enter these fields.</p>
-  </div>
-</div>
-
-<!-- Career node cloud -->
-<div class="node-cloud reveal">
-  <div class="cloud-label">High-demand career nodes — Europe 2025–2030</div>
-  <div class="nodes">
-    <span class="node ng">Electrical Technician</span>
-    <span class="node na">Solar PV Installer</span>
-    <span class="node nl">Energy Auditor</span>
-    <span class="node nw">Grid Engineer</span>
-    <span class="node ng">Heat Pump Specialist</span>
-    <span class="node na">Building Retrofit Advisor</span>
-    <span class="node nl">EV Charging Technician</span>
-    <span class="node nw">Industrial Automation Tech</span>
-    <span class="node ng">Wind Turbine Technician</span>
-    <span class="node na">Battery Systems Specialist</span>
-    <span class="node nl">Smart Meter Installer</span>
-    <span class="node nw">BIM Coordinator</span>
-    <span class="node ng">HVAC Engineer</span>
-    <span class="node na">Fibre Network Technician</span>
-    <span class="node nl">Electrification Project Manager</span>
-  </div>
-</div>
-```
-
-  </div>
-</section>
-
-<!-- ═══ WHY NEXPROF MATTERS ════════════════════════════════════ -->
-
-<section class="sec">
-  <div class="wrap">
-
-```
-<div class="split">
-
-  <div class="reveal">
-    <span class="label">Why It Matters</span>
-    <h2 class="sec-title">The gap is real.<br>The timing is now.</h2>
-    <p class="sec-body">
-      The convergence of AI disruption and skilled labour shortage creates a rare window for motivated professionals to transition into high-security, high-growth careers. NexProf is building the infrastructure to make that transition fast, transparent, and effective.
-    </p>
-  </div>
-
-  <div class="why-list reveal">
-    <div class="why-item">
-      <span class="why-dot"></span>
-      <p>Growing disruption of white-collar professions across finance, administration, and operations</p>
-    </div>
-    <div class="why-item">
-      <span class="why-dot"></span>
-      <p>Severe shortages in skilled technical sectors — demand far exceeding supply</p>
-    </div>
-    <div class="why-item">
-      <span class="why-dot"></span>
-      <p>Untapped talent among experienced professionals whose skills translate across sectors</p>
-    </div>
-    <div class="why-item">
-      <span class="why-dot"></span>
-      <p>Demand for transparent, efficient retraining pathways that fit working professionals</p>
-    </div>
-  </div>
-
-</div>
-```
-
-  </div>
-</section>
-
-<!-- ═══ SIGNUP ══════════════════════════════════════════════════ -->
-
-<div class="signup-wrap sec-dark" id="signup">
-  <div class="signup-box reveal">
-
-```
-<span class="label">Early Access</span>
-<h2 class="sec-title">Join the research group.</h2>
-<p class="sec-body" style="margin: 0 auto;">
-  NexProf is currently validating the platform with early participants, industry partners, and potential investors. Sign up to follow the project and get first access to pilot programmes.
+<p class="sec-body" style="margin:auto">
+Sign up to follow the NexProf project and receive early access
+to pilot programmes and research updates.
 </p>
 
 <div class="form-card">
-  <div class="fg-row">
-    <div class="fg">
-      <label>First name</label>
-      <input type="text" placeholder="Anna">
-    </div>
-    <div class="fg">
-      <label>Last name</label>
-      <input type="text" placeholder="de Vries">
-    </div>
-  </div>
-  <div class="fg">
-    <label>Email address</label>
-    <input type="email" placeholder="you@example.com">
-  </div>
-  <div class="fg">
-    <label>Current professional background</label>
-    <select>
-      <option value="" disabled selected>Select one…</option>
-      <option>Finance / Accounting</option>
-      <option>Administration / Operations</option>
-      <option>Marketing / Communications</option>
-      <option>Legal / Compliance</option>
-      <option>IT / Data</option>
-      <option>Engineering (non-electrical)</option>
-      <option>Education / Training</option>
-      <option>Recent graduate</option>
-      <option>Other</option>
-    </select>
-  </div>
-  <div class="fg">
-    <label>Country</label>
-    <select>
-      <option value="" disabled selected>Select country…</option>
-      <option>Netherlands</option>
-      <option>Belgium</option>
-      <option>Germany</option>
-      <option>France</option>
-      <option>United Kingdom</option>
-      <option>Denmark</option>
-      <option>Sweden</option>
-      <option>Other EU</option>
-      <option>Other</option>
-    </select>
-  </div>
-  <button class="submit-btn" type="button">Join the Waitlist →</button>
-  <p class="form-note">No spam. No commitment. Unsubscribe at any time. Your data is never shared with third parties.</p>
-</div>
-```
 
-  </div>
+<form>
+
+<div class="fg-row">
+
+<div class="fg">
+<label>First name</label>
+<input type="text" placeholder="Anna">
 </div>
 
-<!-- ═══ FOOTER ══════════════════════════════════════════════════ -->
+<div class="fg">
+<label>Last name</label>
+<input type="text" placeholder="de Vries">
+</div>
+
+</div>
+
+<div class="fg">
+<label>Email address</label>
+<input type="email" placeholder="you@example.com">
+</div>
+
+<div class="fg">
+<label>Professional background</label>
+
+<select>
+<option disabled selected>Select one…</option>
+<option>Finance / Accounting</option>
+<option>Administration / Operations</option>
+<option>Marketing / Communications</option>
+<option>Legal / Compliance</option>
+<option>IT / Data</option>
+<option>Engineering</option>
+<option>Recent graduate</option>
+<option>Other</option>
+</select>
+
+</div>
+
+<button class="submit-btn" type="submit">
+Join the Waitlist →
+</button>
+
+<p class="form-note">
+No spam. No commitment. Unsubscribe anytime.
+By signing up you agree to our
+<a href="/privacy">Privacy Policy</a>.
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo">Nex<em>Prof</em></div>
-      <div class="footer-tagline">Building pathways into the skilled economy — for the AI transition generation.</div>
-    </div>
-    <div class="footer-links">
-      <a href="mailto:hello@nexprof.com">Contact</a>
-      <a href="#">Privacy Policy</a>
-      <a href="https://linkedin.com/company/nexprof" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-  </div>
-  <p class="footer-copy">© 2026 NexProf • nexprof.com — NexProf is an independent research initiative and is not affiliated with any government body or training provider.</p>
+
+<div class="footer-inner">
+
+<div>
+
+<div class="footer-logo">Nex<em>Prof</em></div>
+
+<p style="font-size:13px;color:var(--muted)">
+Building pathways into the skilled economy for the AI transition generation.
+</p>
+
+</div>
+
+<div class="footer-links">
+
+<a href="mailto:hello@nexprof.com">Contact</a>
+<a href="/privacy">Privacy Policy</a>
+<a href="https://linkedin.com/company/nexprof" target="_blank">LinkedIn</a>
+
+</div>
+
+</div>
+
+<p class="footer-copy">
+© 2026 NexProf • nexprof.com
+</p>
+
 </footer>
-
-<!-- ═══ SCROLL REVEAL ═══════════════════════════════════════════ -->
-
-<script>
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('on');
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
-
-<!--
-════════════════════════════════════════════════════════════════
-  IMAGE UPGRADE NOTES — NexProf v2.1
-  (All current visuals are CSS/SVG — zero broken links)
-════════════════════════════════════════════════════════════════
-
-  To add photography in v2.2, source and upload to Cloudflare Pages
-  at /public/images/ and reference as /images/filename.jpg
-
-  1. HERO SECTION — full-width background photo (optional overlay)
-     Concept: European infrastructure workers / solar field aerial
-     Source: Unsplash (free) — https://unsplash.com/s/photos/solar-farm-europe
-     Upload: /images/hero-bg.jpg
-     CSS:    .hero { background-image: url('/images/hero-bg.jpg');
-                     background-size: cover; background-position: center; }
-
-  2. STEP ILLUSTRATIONS — 3 clean SVG or PNG spot illustrations
-     Source: https://undraw.co (search: assessment, learning, handshake)
-     Upload: /images/step-map.svg, step-train.svg, step-connect.svg
-     HTML:   <img src="/images/step-map.svg" alt="" aria-hidden="true"
-                  style="width:100%;max-width:220px;margin-bottom:16px">
-
-  3. PERSONA SECTION — replace emoji with real or stock headshots
-     Source: https://randomuser.me (check TOS for commercial use)
-     Upload: /images/persona-1.jpg ... persona-4.jpg
-     HTML:   <img src="/images/persona-1.jpg" alt="Professional"
-                  style="width:48px;height:48px;border-radius:50%;object-fit:cover">
-
-  4. CONCENTRIC RINGS BRAND MARK (hero SVG — already embedded inline)
-     No upload needed. Adjust opacity/size via CSS .hero-rings { opacity }
-
-════════════════════════════════════════════════════════════════
-  CLOUDFLARE PAGES DEPLOYMENT
-════════════════════════════════════════════════════════════════
-
-  1. Rename this file to: index.html
-  2. Place in a folder, e.g. /nexprof-site/
-  3. Push to a GitHub repo (public or private)
-  4. In Cloudflare Pages dashboard:
-       - Connect to GitHub → select repo
-       - Build command: (leave blank — static site)
-       - Build output directory: / (or subfolder if applicable)
-  5. Deploy. Your site will be live at *.pages.dev immediately.
-  6. Add custom domain nexprof.com via Pages > Custom Domains
-
-════════════════════════════════════════════════════════════════
--->
 
 </body>
 </html>
